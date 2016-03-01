@@ -1,1 +1,11 @@
-{{#link-to 'politician' model.bioguide_id}}{{model.title}} {{model.first_name}} {{model.last_name}}, {{model.party}} {{/link-to}}
+{{#link-to 'politician' model.bioguide_id}}
+
+{{#if model.state_rank}}
+<i>({{model.state_rank}})</i>
+{{/if}}
+
+{{model.title}}
+{{model.first_name}}
+{{model.last_name}},
+({{model.party}})
+{{/link-to}}

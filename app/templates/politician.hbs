@@ -1,4 +1,4 @@
-<h1>{{model.title}} {{model.first_name}} {{model.last_name}}, {{model.party}}</h1>
+<h1>{{model.state-rank}} {{politician.title}} {{model.first_name}} {{model.last_name}}, {{model.party}}</h1>
 
 <p>Chamber: {{model.chamber}}<br>
   {{#if model.district}}
@@ -11,13 +11,20 @@
 
    <div class="contact">
    <p>
-     Office: {{model.office}}<br>
+     Office: {{model.politician.office}}<br>
      Contact Form: {{model.contact_form}}<br>
      Fax: {{model.fax}}<br>
      Phone: {{model.phone}}<br>
      Twitter: {{model.twitter_id}}<br>
+     {{#if model.facebook}}
      Facebook: {{model.facebook_id}}<br>
+     {{else}}
+     Facebook: <i>(none)</i><br>
+     {{/if}}
+
      Website: {{model.website}}<br>
      Youtube: {{model.youtube_id}}<br>
    </p>
    </div>
+
+   {{bills.length}}
