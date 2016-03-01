@@ -1,1 +1,10 @@
-{{yield}}
+<div class="col-lg-6">
+   <div class="input-group">
+     <label for ="zipcode"></label>
+     {{input type="text" class="form-control" placeholder="Search for a bill" value=billQuery id="billQuery"}}
+     <span class="input-group-btn">
+       <label for="button"> </label>
+       <button class="btn btn-default" {{action 'billSearch'}}>Go!</button>
+     </span>
+   </div>
+ </div>

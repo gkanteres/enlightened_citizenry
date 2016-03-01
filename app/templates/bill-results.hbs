@@ -1,1 +1,5 @@
-{{outlet}}
+<h1>Bill Results</h1>
+
+  {{#each model as |bill|}}
+    {{bill-tile model=bill}}
+  {{/each}}

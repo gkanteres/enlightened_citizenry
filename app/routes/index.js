@@ -6,6 +6,11 @@ export default Ember.Route.extend({
   actions: {
     zipSearch(params) {
       this.transitionTo('results', params.zipcode);
+    },
+
+    billSearch(params) {
+      console.log('Made it to the index route');
+      this.transitionTo('bill-results', params.billQuery);
     }
   }
  });

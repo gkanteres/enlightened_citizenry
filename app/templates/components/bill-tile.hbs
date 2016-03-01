@@ -1,0 +1,25 @@
+
+{{#if showResults}}
+  <h2 {{action 'hideResults'}}>{{model.bill_id}}</h2><br>
+  <b>Official Title:</b> {{model.official_title}}<br><br>
+
+  {{#if model.house}}
+  <b>Chamber:</b> {{model.house}}
+  {{else}}
+  <b>Chamber:</b> <i>(N/A)</i><br>
+  {{/if}}
+
+  <b>Introduced on:</b> {{model.introduced_on}}<br>
+  <b>Last action at:</b> {{model.last_action_at}}<br>
+
+  {{#if mode.last_vote_at}}
+  <b>Last vote at:</b> {{model.last_vote_at}}<br><br>
+  {{else}}
+  <b>Last vote at:</b> <i>(N/A)</i><br><br>
+  {{/if}}
+
+
+  <b>Sponsor:</b> {{#link-to 'politician' model.sponsor_id}}{{model.sponsor.first_name}} {{model.sponsor.last_name}}{{/link-to}}<br>
+  {{else}}
+  <h2 {{action 'showResults'}}>{{model.bill_id}}</h2><br>
+{{/if}}
