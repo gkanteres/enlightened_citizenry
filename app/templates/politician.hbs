@@ -1,1 +1,23 @@
-{{outlet}}
+<h1>{{model.title}} {{model.first_name}} {{model.last_name}}, {{model.party}}</h1>
+
+<p>Chamber: {{model.chamber}}<br>
+  {{#if model.district}}
+    District: {{model.district}}<br>
+    {{else}}
+    District: <i>(none)</i>
+  {{/if}}<br>
+
+  </p>
+
+   <div class="contact">
+   <p>
+     Office: {{model.office}}<br>
+     Contact Form: {{model.contact_form}}<br>
+     Fax: {{model.fax}}<br>
+     Phone: {{model.phone}}<br>
+     Twitter: {{model.twitter_id}}<br>
+     Facebook: {{model.facebook_id}}<br>
+     Website: {{model.website}}<br>
+     Youtube: {{model.youtube_id}}<br>
+   </p>
+   </div>
