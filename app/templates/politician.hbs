@@ -1,30 +1,33 @@
 <h1>{{model.state-rank}} {{politician.title}} {{model.first_name}} {{model.last_name}}, {{model.party}}</h1>
 
-<p>Chamber: {{model.chamber}}<br>
+<p><b>Chamber:</b> {{model.chamber}}<br>
   {{#if model.district}}
-    District: {{model.district}}<br>
+     <b>District:</b> {{model.district}}<br>
     {{else}}
-    District: <i>(none)</i>
+  <b>District:</b> <i>(none)</i>
   {{/if}}<br>
 
   </p>
 
    <div class="contact">
    <p>
-     Office: {{model.politician.office}}<br>
-     Contact Form: {{model.contact_form}}<br>
-     Fax: {{model.fax}}<br>
-     Phone: {{model.phone}}<br>
-     Twitter: {{model.twitter_id}}<br>
+     <b>Office:</b> {{model.office}}<br>
+     <b>Contact Form:</b> {{model.contact_form}}<br>
+     <b>Fax:</b> {{model.fax}}<br>
+     <b>Phone:</b> {{model.phone}}<br>
+     <b>Twitter:</b> {{model.twitter_id}}<br>
      {{#if model.facebook}}
-     Facebook: {{model.facebook_id}}<br>
+     <b>Facebook:</b> {{model.facebook_id}}<br>
      {{else}}
-     Facebook: <i>(none)</i><br>
+     <b>Facebook:</b> <i>(none)</i><br>
      {{/if}}
 
-     Website: {{model.website}}<br>
-     Youtube: {{model.youtube_id}}<br>
+     <b>Website:</b> <a href={{model.website}}>{{model.first_name}} {{model.last_name}}'s Webpage</a><br>
+     <b>Youtube:</b> {{model.youtube_id}}<br>
    </p>
    </div>
 
-   {{bills.length}}
+
+ {{#each model as |bill|}}
+   {{legislator-bills model=model}}
+ {{/each}}
